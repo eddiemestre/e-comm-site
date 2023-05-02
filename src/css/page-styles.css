@@ -1,0 +1,537 @@
+@import './constants.css';
+
+/* 
+:root {
+    --color-white: rgb(255, 255, 255);
+    --color-black: rgb(0, 0, 0);
+    --color-black-variant: rgb(103, 103, 103);
+    --width: 84%;
+    --mobile-width: 90%;
+    --mainTransition: all 0.3s linear;
+
+    --mobileH1-FontSize: 1.2rem;
+    --mobileMain-FontSize: 1rem;
+    --mobileSecondary-FontSize: 0.8rem;
+    --mobileSmall-FontSize: 0.7rem;
+    --mobileSmallest-FontSize: 0.6rem;
+
+
+    --tabletH1-FontSize: 1.2rem;
+    --tabletMain-FontSize: 1.2rem;
+    --tabletSecondary-FontSize: 1rem;
+    --tabletSmall-FontSize: 0.7rem;
+    --tabletSmallest-FontSize: 0.6rem;
+
+
+    --desktopH1-FontSize: 1.5rem;
+    --desktopMain-FontSize: 1.2rem;
+    --desktopSecondary-FontSize: 1rem;
+    --desktopSmall-FontSize: 0.7rem;
+    --desktopSmallest-FontSize: 0.6rem;
+}
+*/
+
+/* ======================= ABOUT - FEATURED IMAGE ======================== */
+
+
+.about-hero {
+    position: relative;
+    height: 65vh;
+    width: 100vw;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)),
+        url(../assets/images/Faktum_blog_block_1-desktop-w2400.jpg) center/cover no-repeat;
+}
+
+.feature-text {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.feature-text h1 {
+    color: var(--color-white);
+    font-size: var(--mobileH1-FontSize);
+}
+
+
+
+/* ======================= ABOUT - STORY ======================== */
+
+.about-section {
+    padding: 1rem 0;
+}
+
+.about-section h1 {
+    padding: 0 2rem;
+    font-size: var(--mobilePageHeader-FontSize);
+}
+
+.about-section p {
+    padding: 1rem 2rem;
+    font-size: var(--mobileMain-FontSize);
+}
+
+.image-container-one {
+    height: 50vh;
+    width: 100%;
+    text-align: center;
+}
+
+.image-container-two {
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.about-section img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* ======================= END - MESSAGING ======================== */
+
+.end-section {
+    height: calc(100vh - 5rem - 11rem);
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.end-section h2 {
+    font-size: var(--mobileH1-FontSize);
+    text-align: center;
+}
+
+.end-btn {
+    margin: 3rem auto;
+    background-color: transparent;
+    padding: 0.6rem 3rem;
+    text-transform: uppercase;
+    font-size: var(--mobileMain-FontSize);
+    transition: var(--mainTransition);
+    color: var(--color-black);
+    border: 1px solid var(--color-black);
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.end-btn:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+/* ======================= FEED - FEATURED PRODUCTS ======================== */
+
+.feed-products {
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    /* background: pink; */
+}
+
+.feed-section {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    align-items: center;
+}
+
+.feed-section h1 {
+    /* text-transform: uppercase; */
+    font-size: var(--mobilePageHeader-FontSize);
+}
+
+.feed-section p {
+    text-transform: capitalize;
+    font-size: var(--mobileMain-FontSize);
+}
+
+.load-more-btn {
+    margin: 0 auto;
+    background-color: transparent;
+    padding: 0.6rem 3rem;
+    text-transform: uppercase;
+    font-size: var(--mobileMain-FontSize);
+    transition: var(--mainTransition);
+    color: var(--color-black);
+    border: 1px solid var(--color-black);
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.load-more-btn:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.product-container {
+    /* background: blue; */
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    padding-bottom: 2.5rem;
+}
+
+article img {
+    height: 150px;
+    width: auto;
+}
+
+article h3 {
+    font-size: var(--mobileMain-FontSize);
+    padding-bottom: 0.5rem;
+}
+
+article h4 {
+    font-size: var(--mobileSecondary-FontSize);
+}
+
+
+
+/* ======================= INDEX - FEATURED IMAGE ======================== */
+
+
+
+.index-hero {
+    position: relative;
+    height: 65vh;
+    width: 100vw;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)),
+        url(../assets/images/ranger-leather-bomber-jacket-distressed-brown-lifestyle-1D_84691c24-f4b5-4e34-9685-a52bd334eac4_900x900_crop_center.webp) center/cover no-repeat;
+}
+
+.feature-text {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.feature-text h1 {
+    color: var(--color-white);
+    font-size: var(--mobileH1-FontSize);
+}
+
+
+
+/* ======================= INDEX - FEATURED PRODUCTS ======================== */
+
+.home-new-arrivals {
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    /* background: pink; */
+}
+
+.section-title {
+    padding-bottom: 1.2rem;
+}
+
+.section-title h1 {
+    font-size: var(--mobilePageHeader-FontSize);
+    /* text-transform: uppercase; */
+}
+
+.see-all-btn {
+    margin: 0 auto;
+    background-color: transparent;
+    padding: 0.6rem 3rem;
+    text-transform: uppercase;
+    font-size: var(--mobileMain-FontSize);
+    transition: var(--mainTransition);
+    border: 1px solid var(--color-black);
+    color: var(--color-black);
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.see-all-btn:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.new-products {
+    /* background: blue; */
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    padding-bottom: 2.5rem;
+}
+
+article img {
+    height: 150px;
+    width: auto;
+}
+
+article h3 {
+    font-size: var(--mobileMain-FontSize);
+    padding-bottom: 0.5rem;
+}
+
+article h4 {
+    font-size: var(--mobileSecondary-FontSize);
+}
+
+/* ======================= LOGIN - FORM ======================== */
+
+.login-section {
+    height: calc(100vh - 5rem - 11rem);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: pink; */
+}
+
+.login-container {
+    /* background: blue; */
+    padding: 2rem 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container h1 {
+    font-size: var(--mobileH1-FontSize);
+}
+
+.login-container p {
+    font-size: var(--mobileSecondary-FontSize);
+}
+
+.login-container p u {
+    text-decoration: underline;
+}
+
+.input-section {
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+input {
+    height: 2rem;
+    width: 100%;
+    border: none;
+    border: 1px solid var(--color-black);
+    border-radius: 0px;
+    font-size: var(--mobileMain-FontSize);
+    text-indent: 1rem;
+}
+
+.login-btn {
+    margin: 3rem auto;
+    background-color: transparent;
+    padding: 0.6rem 3rem;
+    text-transform: uppercase;
+    font-size: var(--mobileMain-FontSize);
+    color: var(--color-black);
+    transition: var(--mainTransition);
+    border: none;
+    border: 1px solid var(--color-black);
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.login-btn:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+
+/* ================= PDP - SCROLLER ==================== */
+.swiper {
+    width: var(--mobile-width);
+    height: 100%;
+}
+
+.swiper-wrapper {
+    width: var(--mobile-width);
+    margin-bottom: 3rem;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.swiper-pagination-bullet {
+    background: var(--color-black);
+}
+
+/* ================== PDP - PRODUCT DETAILS =================== */
+
+.product-details {
+    display: flex;
+    justify-content: center;
+
+}
+
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem;
+    max-width: 1200px;
+}
+
+.product-details h1 {
+    font-size: var(--mobilePageHeader-FontSize);
+    padding-bottom: 0.8rem;
+}
+
+.product-details h2 {
+    font-size: var(--mobileH1-FontSize);
+    padding-bottom: 0.8rem;
+}
+
+.product-details .product-desc {
+    font-size: var(--mobileMain-FontSize);
+}
+
+.expandable-items {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.expandable-items h2 {
+    font-size: var(--mobileMain-FontSize);
+    padding: 0;
+}
+
+.expandable-items p {
+    padding-bottom: 1rem;
+    font-size: var(--mobileMain-FontSize);
+}
+
+.size-fit,
+.details,
+.care {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: start;
+    transition: all .3s ease;
+    height: 2rem;
+    overflow: hidden;
+}
+
+.expand-details {
+    height: fit-content;
+}
+
+.expandable-header {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    cursor: pointer;
+    line-height: 2rem;
+    /* background: blue; */
+}
+
+.add-to-bag-btn {
+    margin: 0 auto;
+    background-color: transparent;
+    padding: 0.6rem 3rem;
+    text-transform: uppercase;
+    font-size: var(--mobileMain-FontSize);
+    color: var(--color-black);
+    transition: var(--mainTransition);
+    border: 1px solid var(--color-black);
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.add-to-bag-btn:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+
+/* ======================= PRIVACY - INFO ======================== */
+
+.privacy-section {
+    padding: 1rem 0;
+}
+
+.privacy-section h1 {
+    padding: 0 2rem;
+    font-size: var(--mobilePageHeader-FontSize);
+}
+
+.privacy-section p {
+    padding: 1rem 2rem;
+    font-size: var(--mobileMain-FontSize);
+}
+
+/* ======================= RETURNS - INFO ======================== */
+
+.returns-section {
+    padding: 1rem 0;
+}
+
+.returns-section h1 {
+    padding: 0 2rem;
+    font-size: var(--mobilePageHeader-FontSize);
+}
+
+.returns-section p {
+    padding: 1rem 2rem;
+    font-size: var(--mobileMain-FontSize);
+}
+
+
+/* ==================== 404 ========================= */
+.FourOhFour {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.FourOhFour h1 {
+    font-size: var(--mobileH1-FontSize);
+}
+
+
+
+/* ========================== MEDIA QUERIES ========================= */
+@media screen and (min-width: 768px) {
+
+    /* ========== INDEX ============ */
+
+    .feature-text {
+        position: absolute;
+        bottom: 0;
+        padding-bottom: 2rem;
+        padding-left: 2rem;
+    }
+
+    .feature-text h1 {
+        font-size: 1.2rem;
+    }
+}

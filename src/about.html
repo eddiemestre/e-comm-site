@@ -15,181 +15,64 @@
         rel="stylesheet">
 
     <!-- STYLESHEET -->
-    <link rel="stylesheet" href="./css/about.css">
+    <!-- <link rel="stylesheet" href="./css/about.css"> -->
+    <link rel="stylesheet" href="./css/constants.css">
+    <link rel="stylesheet" href="./css/page-styles.css">
 </head>
 
 <body>
     <!-- NAV BAR -->
     <nav>
         <div class="container">
+            <a class="nav-logo" href="index.html">Ecom Demo</a>
             <button class="menu-btn"><img src="./assets/icons/hamburger.svg" alt="menu icon"></button>
             <button class="close-btn"><img src="./assets/icons/exit.svg" alt="close icon"></button>
-            <div class="main-nav">
-                <div class="top-nav">
-                    <ul>
-                        <li><a href="feed.html">All Products</a></li>
-                        <div class="inner-nav">
-                            <ul>
-                                <li><a href="feed.html">New Arrivals</a></li>
-                                <li><a href="feed.html">80s Collection</a></li>
-                            </ul>
-                        </div>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="login.html">Login</a></li>
-                    </ul>
-                </div>
-                <div class="bottom-nav">
-                    <ul>
-                        <li><a href="returns-refunds.html">Returns & Refunds</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    </ul>
-                    <div class="copyright">
-                        <p>© Ecom Demo Inc.</p>
+            <div class="desktop-nav">
+                <div class="main-nav">
+                    <div class="top-nav">
+                        <ul>
+                            <li><a href="feed.html?content=all-products">All Products</a></li>
+                            <li class="nav-indent"><a href="feed.html?content=new-arrivals">New Arrivals</a></li>
+                            <li class="nav-indent"><a href="feed.html?content=80s-collection">80s Collection</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li class="nav-login"><a href="login.html">Login</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottom-nav">
+                        <ul>
+                            <li><a href="returns-refunds.html">Returns & Refunds</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                        <!-- <div class="copyright">
+                                    <p>© Ecom Demo Inc.</p>
+                                </div> -->
                     </div>
                 </div>
 
-            </div>
-            <a class="nav-logo" href="index.html">Ecom Demo</a>
-
-            <div class="icons">
-                <a href="login.html"><img src="./assets/icons/profile.svg" alt="profile icon"></a>
-                <button class="bag-btn">
-                    <img src="./assets/icons/bag.svg" alt="shopping bag">
-                    <div class="bag-items">2</div>
-                </button>
+                <div class="icons">
+                    <a href="login.html"><img src="./assets/icons/profile.svg" alt="profile icon"></a>
+                    <button class="bag-btn">
+                        <img src="./assets/icons/bag.svg" alt="shopping bag">
+                        <div class="bag-items">0</div>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
+    <!-- APP OVERLAY -->
+    <div class="app-overlay"></div>
+
     <!-- CART -->
-    <div class="cart-overlay"></div>
     <div class="cart-container">
         <div class="cart">
             <div class="cart-content">
-                <div class="cart-item">
-                    <img class="product"
-                        src="./assets/images/jackets-coats-la-vintage-varsity-jacket-blue-m-urban-street-wear-fashion-apparel-techwear-streetwear-29429948022830.jpg"
-                        alt="vintage-jacket">
-                    <div>
-                        <p>Little Monster Letterman</p>
-                        <p>$360</p>
-                    </div>
-                    <div class="item-edit">
-                        <img class="remove-item" src="./assets/icons/exit.svg" data-id="1" alt="delete">
-                        <div class="item-counter">
-                            <img class="decrement-item" src="./assets/icons/minus.svg" data-id="1" alt="decrement item">
-                            <p class="item-amount">1</p>
-                            <img class="increment-item" src="./assets/icons/plus.svg" data-id="1" alt="increment item">
-                        </div>
-                    </div>
-                </div>
-                <div class="cart-item">
-                    <img class="product"
-                        src="./assets/images/jackets-coats-la-vintage-varsity-jacket-blue-m-urban-street-wear-fashion-apparel-techwear-streetwear-29429948022830.jpg"
-                        alt="vintage-jacket">
-                    <div>
-                        <p>Little Monster Letterman</p>
-                        <p>$360</p>
-                    </div>
-                    <div class="item-edit">
-                        <img class="remove-item" src="./assets/icons/exit.svg" data-id="1" alt="delete">
-                        <div class="item-counter">
-                            <img class="decrement-item" src="./assets/icons/minus.svg" data-id="1" alt="decrement item">
-                            <p class="item-amount">1</p>
-                            <img class="increment-item" src="./assets/icons/plus.svg" data-id="1" alt="increment item">
-                        </div>
-                    </div>
-                </div>
-                <div class="cart-item">
-                    <img class="product"
-                        src="./assets/images/jackets-coats-la-vintage-varsity-jacket-blue-m-urban-street-wear-fashion-apparel-techwear-streetwear-29429948022830.jpg"
-                        alt="vintage-jacket">
-                    <div>
-                        <p>Little Monster Letterman</p>
-                        <p>$360</p>
-                    </div>
-                    <div class="item-edit">
-                        <img class="remove-item" src="./assets/icons/exit.svg" data-id="1" alt="delete">
-                        <div class="item-counter">
-                            <img class="decrement-item" src="./assets/icons/minus.svg" data-id="1" alt="decrement item">
-                            <p class="item-amount">1</p>
-                            <img class="increment-item" src="./assets/icons/plus.svg" data-id="1" alt="increment item">
-                        </div>
-                    </div>
-                </div>
-                <div class="cart-item">
-                    <img class="product"
-                        src="./assets/images/jackets-coats-la-vintage-varsity-jacket-blue-m-urban-street-wear-fashion-apparel-techwear-streetwear-29429948022830.jpg"
-                        alt="vintage-jacket">
-                    <div>
-                        <p>Little Monster Letterman</p>
-                        <p>$360</p>
-                    </div>
-                    <div class="item-edit">
-                        <img class="remove-item" src="./assets/icons/exit.svg" data-id="1" alt="delete">
-                        <div class="item-counter">
-                            <img class="decrement-item" src="./assets/icons/minus.svg" data-id="1" alt="decrement item">
-                            <p class="item-amount">1</p>
-                            <img class="increment-item" src="./assets/icons/plus.svg" data-id="1" alt="increment item">
-                        </div>
-                    </div>
-                </div>
-                <div class="cart-item">
-                    <img class="product"
-                        src="./assets/images/jackets-coats-la-vintage-varsity-jacket-blue-m-urban-street-wear-fashion-apparel-techwear-streetwear-29429948022830.jpg"
-                        alt="vintage-jacket">
-                    <div>
-                        <p>Little Monster Letterman</p>
-                        <p>$360</p>
-                    </div>
-                    <div class="item-edit">
-                        <img class="remove-item" src="./assets/icons/exit.svg" data-id="1" alt="delete">
-                        <div class="item-counter">
-                            <img class="decrement-item" src="./assets/icons/minus.svg" data-id="1" alt="decrement item">
-                            <p class="item-amount">1</p>
-                            <img class="increment-item" src="./assets/icons/plus.svg" data-id="1" alt="increment item">
-                        </div>
-                    </div>
-                </div>
-                <div class="cart-item">
-                    <img class="product"
-                        src="./assets/images/jackets-coats-la-vintage-varsity-jacket-blue-m-urban-street-wear-fashion-apparel-techwear-streetwear-29429948022830.jpg"
-                        alt="vintage-jacket">
-                    <div>
-                        <p>Little Monster Letterman</p>
-                        <p>$360</p>
-                    </div>
-                    <div class="item-edit">
-                        <img class="remove-item" src="./assets/icons/exit.svg" data-id="1" alt="delete">
-                        <div class="item-counter">
-                            <img class="decrement-item" src="./assets/icons/minus.svg" data-id="1" alt="decrement item">
-                            <p class="item-amount">1</p>
-                            <img class="increment-item" src="./assets/icons/plus.svg" data-id="1" alt="increment item">
-                        </div>
-                    </div>
-                </div>
-                <div class="cart-item">
-                    <img class="product"
-                        src="./assets/images/jackets-coats-la-vintage-varsity-jacket-blue-m-urban-street-wear-fashion-apparel-techwear-streetwear-29429948022830.jpg"
-                        alt="vintage-jacket">
-                    <div>
-                        <p>Little Monster Letterman</p>
-                        <p>$360</p>
-                    </div>
-                    <div class="item-edit">
-                        <img class="remove-item" src="./assets/icons/exit.svg" data-id="1" alt="delete">
-                        <div class="item-counter">
-                            <img class="decrement-item" src="./assets/icons/minus.svg" data-id="1" alt="decrement item">
-                            <p class="item-amount">1</p>
-                            <img class="increment-item" src="./assets/icons/plus.svg" data-id="1" alt="increment item">
-                        </div>
-                    </div>
-                </div>
+                <!-- cart items added dynamically -->
             </div>
             <div class="cart-details">
                 <div class="order-value">
                     <p>Order Value:</p>
-                    <p>$960</p>
+                    <p>$<span class="order-value-cost">0</span></p>
                 </div>
                 <div class="shipping">
                     <p>Shipping:</p>
@@ -201,7 +84,7 @@
                 </div>
                 <div class="order-total">
                     <p>Order Total:</p>
-                    <p>$960</p>
+                    <p>$<span class="order-total-cost">0</span></p>
                 </div>
             </div>
             <button class="checkout-btn">
@@ -211,7 +94,7 @@
     </div>
 
     <!-- ABOUT -->
-    <header class="hero">
+    <header class="about-hero">
         <div class="feature-text">
             <h1>Redefining the</br>meaning of vintage.</h1>
         </div>

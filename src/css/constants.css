@@ -1,0 +1,528 @@
+/* ================= GLOBAL ==================== */
+
+:root {
+    --color-white: rgb(255, 255, 255);
+    --color-black: rgb(0, 0, 0);
+    --color-black-variant: rgb(103, 103, 103);
+    --width: 84%;
+    --mobile-width: 90%;
+    --mainTransition: all 0.3s linear;
+    /* mobile font sizes */
+    --mobilePageHeader-FontSize: 1.5rem;
+    --mobileH1-FontSize: 1.2rem;
+    --mobileMain-FontSize: 1rem;
+    --mobileSecondary-FontSize: 0.8rem;
+    --mobileSmall-FontSize: 0.7rem;
+    --mobileSmallest-FontSize: 0.6rem;
+    /* tablet font sizes */
+    --tabletH1-FontSize: 1.2rem;
+    --tabletMain-FontSize: 1.2rem;
+    --tabletSecondary-FontSize: 1rem;
+    --tabletSmall-FontSize: 0.7rem;
+    --tabletSmallest-FontSize: 0.6rem;
+    /* desktop font sizes */
+    --desktopH1-FontSize: 1.5rem;
+    --desktopMain-FontSize: 1.2rem;
+    --desktopSecondary-FontSize: 1rem;
+    --desktopSmall-FontSize: 0.7rem;
+    --desktopSmallest-FontSize: 0.6rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    color: var(--color-black);
+    background: var(--color-white);
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--color-black);
+    transition: all 300ms ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--color-black);
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+}
+
+p {
+    line-height: 1.6rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-style: 1px solid var(--color-black);
+    cursor: pointer;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    transition: all 300ms ease;
+}
+
+.btn:hover {
+    background-color: var(--color-black);
+    color: var(--color-white)
+}
+
+/* section {
+    max-width: 1200px;
+    padding: 12rem 0 0;
+} */
+
+
+/* GLOBAL OVERLAY */
+.app-overlay {
+    position: fixed;
+    top: 5rem;
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 5rem);
+    /* transition: var(--mainTransition); */
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    visibility: hidden;
+}
+
+.transparentBkg {
+    visibility: visible;
+}
+
+/* =================== NAVBAR ==================== */
+nav {
+    width: 100vw;
+    height: 5rem;
+    display: grid;
+    place-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: var(--color-white);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+nav button {
+    cursor: pointer;
+}
+
+nav .container .main-nav {
+    display: flex;
+    gap: 2px;
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    background: var(--color-white);
+    height: calc(100vh - 5rem);
+    transition: var(--mainTransition);
+    transform: translateX(-100%);
+}
+
+nav .container .showSideBar {
+    transform: translateX(0%);
+}
+
+nav .container .top-nav ul li {
+    height: 2.5rem;
+    font-size: var(--mobileMain-FontSize);
+    display: flex;
+    align-items: center;
+}
+
+nav .container .top-nav ul li a {
+    width: 100%;
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+nav .container .top-nav ul li a:hover {
+    color: var(--color-black-variant)
+}
+
+.nav-indent {
+    padding-left: 3rem;
+}
+
+/* nav .container .inner-nav ul li a {
+    width: 100%;
+    padding-left: 3rem;
+} */
+
+nav .container .bottom-nav {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    margin-bottom: 8rem;
+}
+
+nav .container .bottom-nav ul li {
+    padding-left: 1rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: var(--mobileSecondary-FontSize);
+}
+
+nav .container .bottom-nav ul li a:hover {
+    color: var(--color-black-variant);
+}
+
+
+
+nav .container .bottom-nav .copyright {
+    margin: 0 auto;
+    font-size: var(--mobileSecondary-FontSize);
+}
+
+.nav-logo {
+    position: absolute;
+    top: 2.5rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cardo', serif;
+    font-size: var(--mobileMain-FontSize);
+    text-transform: uppercase;
+    letter-spacing: 0.12rem;
+}
+
+nav .icons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .bag-btn {
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+}
+
+nav .bag-items {
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    padding: 0 5px;
+    font-size: var(--mobileSmall-FontSize);
+    text-align: left;
+    color: var(--color-black);
+}
+
+nav button {
+    background-color: transparent;
+}
+
+nav button.close-btn {
+    display: none;
+}
+
+
+/* ========================== CART =========================+ */
+.cart-content {
+    max-height: 40vh;
+    overflow: scroll;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.cart {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 5rem;
+    width: 100%;
+    height: auto;
+    overflow: scroll;
+    z-index: 3;
+    background: var(--color-white);
+    padding: 0 1.5rem;
+}
+
+.cart-container {
+    display: none;
+    z-index: 3;
+}
+
+.showCart {
+    display: block;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+/* =========== INDIVIDUAL CART ITEM ============= */
+.cart-item {
+    /* background-color: red; */
+    display: grid;
+    /* align-items: center; */
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap: 1.5rem;
+    margin: 1.5rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid;
+}
+
+.cart-item .product {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
+.cart-item {
+    font-size: var(--mobileSecondary-FontSize);
+}
+
+.item-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.remove-item {
+    height: 15px;
+    width: 15px;
+}
+
+.item-counter {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.decrement-item,
+.increment-item {
+    height: 8px;
+    width: 8px;
+}
+
+.item-amount {
+    font-size: var(--mobileSmallest-FontSize);
+    line-height: 0.6rem;
+}
+
+
+/* ================== CART FOOTER DETAILS =============== */
+
+.cart-details {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+
+
+
+.order-value,
+.shipping,
+.tax,
+.order-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--mobileSecondary-FontSize);
+}
+
+.checkout-btn {
+    margin: 0 auto;
+    background-color: transparent;
+    padding: 0.6rem 3rem;
+    text-transform: uppercase;
+    font-size: var(--mobileMain-FontSize);
+    transition: var(--mainTransition);
+    color: var(--color-black);
+    border: 1px solid var(--color-black);
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.checkout-btn:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+
+/* ===================== FOOTER ========================== */
+footer {
+    height: auto;
+    width: 100;
+    background-color: var(--color-black);
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 2rem 2rem;
+}
+
+.footer-nav ul li:not(:last-child) {
+    padding-bottom: 0.6rem;
+}
+
+.footer-nav a {
+    font-size: var(--mobileSecondary-FontSize);
+    color: var(--color-white);
+}
+
+.footer-icons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.footer-icons img {
+    width: 1.5rem;
+    height: auto;
+}
+
+/* ========================== MEDIA QUERIES ========================= */
+@media screen and (min-width: 768px) {
+
+    /* =================== NAV BAR ================= */
+    nav .container .main-nav {
+        width: 40%;
+        max-width: 400px;
+    }
+
+    nav .container .top-nav ul li {
+        height: 3rem;
+        font-size: var(--tabletMain-FontSize);
+    }
+
+    .nav-indent {
+        padding-left: 3.5rem;
+    }
+
+    /* nav .container .inner-nav ul li a {
+        padding-left: 3.5rem;
+    } */
+
+    nav .container .bottom-nav ul li {
+        height: 2.5rem;
+        font-size: var(--tabletSecondary-FontSize);
+    }
+
+    /*  ============== CART ================ */
+    .cart {
+        right: 0;
+        width: auto;
+    }
+
+
+    /* ================ FOOTER ============== */
+
+    .footer-nav ul li:not(:last-child) {
+        padding-bottom: 1rem;
+    }
+
+    .footer-nav a {
+        font-size: var(--tabletSecondary-FontSize);
+    }
+
+    .footer-icons {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .footer-icons img {
+        width: 2rem;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    /* logo placement */
+    nav .nav-logo {
+        position: static;
+        font-size: var(--desktopMain-FontSize);
+        transition: none;
+        transform: translate(0, 0);
+    }
+
+    /* hide menu btn */
+    nav .container .menu-btn {
+        display: none;
+    }
+
+    /*  */
+    nav .desktop-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-grow: 1;
+    }
+
+    /* width properties were set for tablet, need to set here */
+    nav .container .main-nav {
+        position: static;
+        width: fit-content;
+        max-width: fit-content;
+        height: auto;
+        transform: translateX(0);
+        padding-left: 2rem;
+        transition: none;
+    }
+
+    /* spacing between nav elements */
+    nav .container .main-nav .top-nav ul {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    nav .container .main-nav .top-nav ul li {
+        height: 2.5rem;
+        font-size: var(--desktopSecondary-FontSize);
+    }
+
+
+    /* resets the styling from other breakpoints */
+    nav .container .main-nav .top-nav ul li a {
+        padding-left: 0rem;
+        padding-top: 0rem;
+    }
+
+    /* resets the styling from other breakpoints */
+    .nav-indent {
+        padding-left: 0rem;
+    }
+
+    nav .container .desktop-nav .main-nav .nav-login {
+        display: none;
+    }
+
+
+    nav .container .bottom-nav {
+        display: none;
+    }
+}
