@@ -1,5 +1,13 @@
 @import './constants.css';
 
+
+:root {
+    --swiper-navigation-size: 30px;
+    --swiper-navigation-top-offset: 50%;
+    --swiper-navigation-sides-offset: 10px;
+    --swiper-navigation-color: var(--color-black);
+}
+
 /* 
 :root {
     --color-white: rgb(255, 255, 255);
@@ -14,7 +22,7 @@
     --mobileSecondary-FontSize: 0.8rem;
     --mobileSmall-FontSize: 0.7rem;
     --mobileSmallest-FontSize: 0.6rem;
-
+    --mobilePageHeader-FontSize: 1.5rem;
 
     --tabletH1-FontSize: 1.2rem;
     --tabletMain-FontSize: 1.2rem;
@@ -32,14 +40,18 @@
 */
 
 /* ======================= ABOUT - FEATURED IMAGE ======================== */
-
-
 .about-hero {
+    display: flex;
+    justify-content: center;
+}
+
+.header-container {
     position: relative;
     height: 65vh;
     width: 100vw;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)),
         url(../assets/images/Faktum_blog_block_1-desktop-w2400.jpg) center/cover no-repeat;
+    max-width: var(--maxWidth);
 }
 
 .feature-text {
@@ -59,7 +71,13 @@
 /* ======================= ABOUT - STORY ======================== */
 
 .about-section {
+    display: flex;
+    justify-content: center;
+}
+
+.about-section-container {
     padding: 1rem 0;
+    max-width: var(--maxWidth);
 }
 
 .about-section h1 {
@@ -79,7 +97,7 @@
 }
 
 .image-container-two {
-    height: auto;
+    height: 50vh;
     width: 100%;
     text-align: center;
 }
@@ -94,7 +112,12 @@
 /* ======================= END - MESSAGING ======================== */
 
 .end-section {
-    height: calc(100vh - 5rem - 11rem);
+    display: flex;
+    justify-content: center;
+}
+
+.end-section-container {
+    height: calc(100vh - 5rem - 12rem);
     width: 100%;
     padding: 2rem;
     display: flex;
@@ -104,7 +127,7 @@
 }
 
 .end-section h2 {
-    font-size: var(--mobileH1-FontSize);
+    font-size: var(--mobileMain-FontSize);
     text-align: center;
 }
 
@@ -129,11 +152,18 @@
 /* ======================= FEED - FEATURED PRODUCTS ======================== */
 
 .feed-products {
+    display: flex;
+    justify-content: center;
+}
+
+.feed-products-container {
     padding: 2rem 2rem;
     display: flex;
     flex-direction: column;
     width: 100vw;
+    min-height: calc(100vh - 5rem - 12rem);
     /* background: pink; */
+    max-width: var(--maxWidth);
 }
 
 .feed-section {
@@ -200,14 +230,18 @@ article h4 {
 
 /* ======================= INDEX - FEATURED IMAGE ======================== */
 
-
-
 .index-hero {
+    display: flex;
+    justify-content: center;
+}
+
+.index-hero-container {
     position: relative;
     height: 65vh;
     width: 100vw;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)),
         url(../assets/images/ranger-leather-bomber-jacket-distressed-brown-lifestyle-1D_84691c24-f4b5-4e34-9685-a52bd334eac4_900x900_crop_center.webp) center/cover no-repeat;
+    max-width: var(--maxWidth);
 }
 
 .feature-text {
@@ -227,11 +261,17 @@ article h4 {
 /* ======================= INDEX - FEATURED PRODUCTS ======================== */
 
 .home-new-arrivals {
+    display: flex;
+    justify-content: center;
+}
+
+.home-new-arrivals-container {
     padding: 2rem 2rem;
     display: flex;
     flex-direction: column;
     width: 100vw;
     /* background: pink; */
+    max-width: var(--maxWidth);
 }
 
 .section-title {
@@ -289,12 +329,18 @@ article h4 {
 /* ======================= LOGIN - FORM ======================== */
 
 .login-section {
+    display: flex;
+    justify-content: center;
+}
+
+.login-outer-container {
     height: calc(100vh - 5rem - 11rem);
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     /* background: pink; */
+    max-width: 20rem;
 }
 
 .login-container {
@@ -306,7 +352,7 @@ article h4 {
 }
 
 .login-container h1 {
-    font-size: var(--mobileH1-FontSize);
+    font-size: var(--mobileMain-FontSize);
 }
 
 .login-container p {
@@ -358,6 +404,7 @@ input {
 .swiper {
     width: var(--mobile-width);
     height: 100%;
+    max-width: 1300px;
 }
 
 .swiper-wrapper {
@@ -381,6 +428,14 @@ input {
     background: var(--color-black);
 }
 
+.swiper-button-next {
+    display: none;
+}
+
+.swiper-button-prev {
+    display: none;
+}
+
 /* ================== PDP - PRODUCT DETAILS =================== */
 
 .product-details {
@@ -393,7 +448,7 @@ input {
     display: flex;
     flex-direction: column;
     padding: 2rem 2rem;
-    max-width: 1200px;
+    max-width: var(--maxWidth)
 }
 
 .product-details h1 {
@@ -472,9 +527,15 @@ input {
 
 
 /* ======================= PRIVACY - INFO ======================== */
-
 .privacy-section {
+    display: flex;
+    justify-content: center;
+}
+
+.privacy-wrapper {
     padding: 1rem 0;
+    min-height: calc(100vh - 5rem - 12rem);
+    max-width: var(--maxWidth);
 }
 
 .privacy-section h1 {
@@ -490,8 +551,16 @@ input {
 /* ======================= RETURNS - INFO ======================== */
 
 .returns-section {
-    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
 }
+
+.return-wrapper {
+    padding: 1rem 0;
+    min-height: calc(100vh - 5rem - 12rem);
+    max-width: var(--maxWidth);
+}
+
 
 .returns-section h1 {
     padding: 0 2rem;
@@ -507,14 +576,20 @@ input {
 /* ==================== 404 ========================= */
 .FourOhFour {
     display: flex;
+    justify-content: center;
+}
+
+.four-oh-four-container {
+    display: flex;
     width: 100vw;
     height: 100vh;
     justify-content: center;
     align-items: center;
+    max-width: var(--maxWidth);
 }
 
 .FourOhFour h1 {
-    font-size: var(--mobileH1-FontSize);
+    font-size: var(--mobileMain-FontSize);
 }
 
 
@@ -523,15 +598,23 @@ input {
 @media screen and (min-width: 768px) {
 
     /* ========== INDEX ============ */
-
     .feature-text {
         position: absolute;
         bottom: 0;
         padding-bottom: 2rem;
         padding-left: 2rem;
     }
+}
 
-    .feature-text h1 {
-        font-size: 1.2rem;
+
+@media screen and (min-width: 1024px) {
+
+    /* ============== PDP ================ */
+    .swiper-button-next {
+        display: block;
+    }
+
+    .swiper-button-prev {
+        display: block;
     }
 }

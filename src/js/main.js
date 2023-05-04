@@ -9,6 +9,7 @@ const indexProductContainer = document.querySelector(".new-products");
 // cart elements
 const cartItems = document.querySelector(".cart-content");
 const cartDOM = document.querySelector(".cart-container");
+const cartContainer = document.querySelector(".cart");
 const orderTotal = document.querySelector(".order-total-cost");
 const orderValue = document.querySelector(".order-value-cost");
 const bagItems = document.querySelector(".bag-items");
@@ -89,11 +90,11 @@ const getProducts = async (contentToFetch) => {
             return { title, price, id, description, care, sizeFit, details, images: finalImageObject };
         })
 
-        console.log("products", products)
+        // console.log("products", products)
         saveProductsToStorage(contentToFetch, products);
     }
     catch (err) {
-        console.log("error fetching data:", err);
+        // console.log("error fetching data:", err);
     }
 }
 
@@ -130,7 +131,7 @@ const getSingleProduct = async (id) => {
         return singleProduct;
     }
     catch (err) {
-        console.log("error fetching data:", err);
+        // console.log("error fetching data:", err);
     }
 }
 
@@ -166,6 +167,8 @@ const renderProducts = (products, parentContainer) => {
     // create html for each product
     const productElements = products.map(product => {
         const article = document.createElement('article');
+
+        article.style.cursor = "pointer";
 
         // add on click event
         article.addEventListener('click', () => {
@@ -249,23 +252,25 @@ const minimizeDiv = (minimizeDiv, toggle, newHeight) => {
 }
 
 const showMenu = () => {
+    if (bagToggle) {
+        hideBag();
+    }
     sideBar.classList.add('showSideBar')
     menuBtn.style.display = "none";
     closeBtn.style.display = "inline-block";
     body.classList.add('no-scroll');
     appOverlay.classList.add('transparentBkg');
-    bagBtn.disabled = true;
     menuToggle = true;
 }
 
 const closeMenu = () => {
+    menuToggle = false;
     sideBar.classList.remove('showSideBar');
     menuBtn.style.display = "inline-block";
     closeBtn.style.display = "none";
     body.classList.remove('no-scroll');
     appOverlay.classList.remove('transparentBkg');
-    bagBtn.disabled = false;
-    menuToggle = false;
+
 }
 
 const hideBag = () => {
@@ -273,12 +278,29 @@ const hideBag = () => {
     appOverlay.classList.remove('transparentBkg');
     cartDOM.classList.remove('showCart');
     body.classList.remove('no-scroll');
+    bagToggle = false;
 }
 
 const showBag = () => {
+    if (menuToggle) {
+        closeMenu();
+    }
     appOverlay.classList.add('transparentBkg');
-    cartDOM.classList.add('showCart');
     body.classList.add('no-scroll');
+    cartDOM.classList.add('showCart');
+
+    // if the page is greater than 1300px, we want to 
+    // position the cart within the 1300px viewport to 
+    // keep things contained.
+    // We divide by 2 since the content is centered.
+    if (body.scrollWidth > 1300) {
+        const diff = body.scrollWidth - 1300;
+        cartContainer.style.marginRight = `${diff / 2}px`;
+    } else {
+        cartContainer.style.marginRight = "0rem";
+    }
+
+    bagToggle = true;
 }
 
 const setBagValues = (bag) => {
@@ -321,14 +343,22 @@ const addBagItem = (item) => {
         <div class="item-edit">
             <img class="remove-item" src="./assets/icons/exit.svg" data-id=${item.id} alt="delete">
             <div class="item-counter">
-                <img class="decrement-item" src="./assets/icons/minus.svg" data-id=${item.id} alt="decrement item">
+                <img class="decrement-item" src="./assets/icons/decrement.svg" data-id=${item.id} alt="decrement item">
                 <p class="item-amount" data-id=${item.id}>${item.amount}</p>
-                <img class="increment-item" src="./assets/icons/plus.svg" data-id=${item.id} alt="increment item">
+                <img class="increment-item" src="./assets/icons/increment.svg" data-id=${item.id} alt="increment item">
             </div>
         </div>
     `;
 
+    // add to cartItems
     cartItems.append(div);
+
+    // user should be able to navigate to PDP of bag items
+    const divImg = div.querySelector(".product");
+    divImg.style.cursor = "pointer";
+    divImg.addEventListener('click', () => {
+        window.location.href = `./pdp.html?product=${item.id}`;
+    })
 }
 
 const incrementBagItem = (id) => {
@@ -370,6 +400,10 @@ const p_pdpSetUp = async () => {
         pagination: {
             el: '.swiper-pagination',
             type: 'bullets',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
     });
 
@@ -502,7 +536,6 @@ const bagSetup = () => {
         } else {
             hideBag();
         }
-        bagToggle = !bagToggle;
     })
 
     // sometimes if user zooms out enough while bag is opened,
@@ -574,11 +607,16 @@ const appSetup = () => {
     appOverlay.addEventListener('click', () => {
         if (bagToggle) {
             hideBag();
-            bagToggle = !bagToggle;
         }
         if (menuToggle) {
             closeMenu();
-            menuToggle = !menuToggle;
+        }
+    })
+
+    // if we resize the window and the bag is open, hide the bag
+    window.addEventListener('resize', () => {
+        if (bagToggle) {
+            hideBag();
         }
     })
 
@@ -603,7 +641,6 @@ const appSetup = () => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log(document.location.pathname);
     appSetup();
 })
 

@@ -6,6 +6,7 @@
     --color-black-variant: rgb(103, 103, 103);
     --width: 84%;
     --mobile-width: 90%;
+    --maxWidth: 1300px;
     --mainTransition: all 0.3s linear;
     /* mobile font sizes */
     --mobilePageHeader-FontSize: 1.5rem;
@@ -107,7 +108,13 @@ p {
 }
 
 /* =================== NAVBAR ==================== */
+
 nav {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-container {
     width: 100vw;
     height: 5rem;
     display: grid;
@@ -116,7 +123,9 @@ nav {
     top: 0;
     z-index: 5;
     background-color: var(--color-white);
+    max-width: var(--maxWidth);
 }
+
 
 nav .container {
     display: flex;
@@ -128,6 +137,14 @@ nav .container {
 
 nav button {
     cursor: pointer;
+}
+
+.menu-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: auto;
 }
 
 nav .container .main-nav {
@@ -257,7 +274,7 @@ nav button.close-btn {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    top: 5rem;
+    /* top: 5rem; */
     width: 100%;
     height: auto;
     overflow: scroll;
@@ -309,26 +326,31 @@ nav button.close-btn {
 }
 
 .remove-item {
-    height: 15px;
-    width: 15px;
+    height: 25px;
+    width: 25px;
 }
 
 .item-counter {
     display: flex;
     flex-direction: row;
-    gap: 0.5rem;
+    gap: 0.6rem;
     justify-content: space-between;
     align-items: center;
 }
 
-.decrement-item,
-.increment-item {
-    height: 8px;
-    width: 8px;
+.item-counter p {
+    padding-top: 0.1rem;
 }
 
+.decrement-item,
+.increment-item {
+    height: 13px;
+    width: 13px;
+}
+
+/* boosted font weight by 0.05rem here */
 .item-amount {
-    font-size: var(--mobileSmallest-FontSize);
+    font-size: 0.85rem;
     line-height: 0.6rem;
 }
 
@@ -374,17 +396,23 @@ nav button.close-btn {
 
 /* ===================== FOOTER ========================== */
 footer {
-    height: auto;
-    width: 100;
+    display: flex;
+    justify-content: center;
     background-color: var(--color-black);
+}
+
+.footer-container {
+    height: 12rem;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: end;
     padding: 2rem 2rem;
+    max-width: var(--maxWidth);
 }
 
 .footer-nav ul li:not(:last-child) {
-    padding-bottom: 0.6rem;
+    padding-bottom: 1rem;
 }
 
 .footer-nav a {
@@ -438,27 +466,12 @@ footer {
 
     /* ================ FOOTER ============== */
 
-    .footer-nav ul li:not(:last-child) {
-        padding-bottom: 1rem;
-    }
-
-    .footer-nav a {
-        font-size: var(--tabletSecondary-FontSize);
-    }
-
-    .footer-icons {
-        display: flex;
-        gap: 0.5rem;
-    }
-
-    .footer-icons img {
-        width: 2rem;
-    }
 }
 
 
 @media screen and (min-width: 1024px) {
 
+    /* =================== NAV BAR ================= */
     /* logo placement */
     nav .nav-logo {
         position: static;
@@ -525,4 +538,5 @@ footer {
     nav .container .bottom-nav {
         display: none;
     }
+
 }

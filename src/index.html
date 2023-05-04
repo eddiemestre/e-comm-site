@@ -23,38 +23,43 @@
 <body>
     <!-- NAV BAR -->
     <nav>
-        <div class="container">
-            <a class="nav-logo" href="index.html">Ecom Demo</a>
-            <button class="menu-btn"><img src="./assets/icons/hamburger.svg" alt="menu icon"></button>
-            <button class="close-btn"><img src="./assets/icons/exit.svg" alt="close icon"></button>
-            <div class="desktop-nav">
-                <div class="main-nav">
-                    <div class="top-nav">
-                        <ul>
-                            <li><a href="feed.html?content=all-products">All Products</a></li>
-                            <li class="nav-indent"><a href="feed.html?content=new-arrivals">New Arrivals</a></li>
-                            <li class="nav-indent"><a href="feed.html?content=80s-collection">80s Collection</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li class="nav-login"><a href="login.html">Login</a></li>
-                        </ul>
-                    </div>
-                    <div class="bottom-nav">
-                        <ul>
-                            <li><a href="returns-refunds.html">Returns & Refunds</a></li>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        </ul>
-                        <!-- <div class="copyright">
-                                    <p>© Ecom Demo Inc.</p>
-                                </div> -->
-                    </div>
+        <div class="nav-container">
+            <div class="container">
+                <a class="nav-logo" href="index.html">Ecom Demo</a>
+                <div class="menu-buttons">
+                    <button class="menu-btn"><img src="./assets/icons/hamburger.svg" alt="menu icon"></button>
+                    <button class="close-btn"><img src="./assets/icons/menu_exit.svg" alt="close icon"></button>
                 </div>
+                <div class="desktop-nav">
+                    <div class="main-nav">
+                        <div class="top-nav">
+                            <ul>
+                                <li><a href="feed.html?content=all-products">All Products</a></li>
+                                <li class="nav-indent"><a href="feed.html?content=new-arrivals">New Arrivals</a></li>
+                                <li class="nav-indent"><a href="feed.html?content=80s-collection">80s Collection</a>
+                                </li>
+                                <li><a href="about.html">About</a></li>
+                                <li class="nav-login"><a href="login.html">Login</a></li>
+                            </ul>
+                        </div>
+                        <div class="bottom-nav">
+                            <ul>
+                                <li><a href="returns-refunds.html">Returns & Refunds</a></li>
+                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            </ul>
+                            <!-- <div class="copyright">
+                                            <p>© Ecom Demo Inc.</p>
+                                        </div> -->
+                        </div>
+                    </div>
 
-                <div class="icons">
-                    <a href="login.html"><img src="./assets/icons/profile.svg" alt="profile icon"></a>
-                    <button class="bag-btn">
-                        <img src="./assets/icons/bag.svg" alt="shopping bag">
-                        <div class="bag-items">0</div>
-                    </button>
+                    <div class="icons">
+                        <a href="login.html"><img src="./assets/icons/profile.svg" alt="profile icon"></a>
+                        <button class="bag-btn">
+                            <img src="./assets/icons/bag.svg" alt="shopping bag">
+                            <div class="bag-items">0</div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -95,42 +100,46 @@
 
     <!-- HOME PAGE CONTENTS -->
     <header class="index-hero">
-        <div class="feature-text">
-            <h1>Drop 63</h1>
-            </br>
-            <h1>The art of the jacket.</h1>
+        <div class="index-hero-container">
+            <div class="feature-text">
+                <h1>Drop 63</h1>
+                </br>
+                <h1>The art of the jacket.</h1>
+            </div>
         </div>
     </header>
 
     <!-- NEW ARRIVALS -->
     <section class="home-new-arrivals">
-        <div class="section-title">
-            <h1>New Arrivals</h1>
+        <div class="home-new-arrivals-container">
+            <div class="section-title">
+                <h1>New Arrivals</h1>
+            </div>
+            <div class="new-products">
+                <!-- New arrival products dynamically rendered here -->
+            </div>
+            <button class="see-all-btn">
+                See all
+            </button>
         </div>
-        <div class="new-products">
-            <!-- New arrival products dynamically rendered here -->
-        </div>
-        <button class="see-all-btn">
-            See all
-        </button>
-        </a>
-
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-nav">
-            <ul>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./login.html">Account</a></li>
-                <li><a href="./returns-refunds.html">Returns & Refunds</a></li>
-                <li><a href="./privacy-policy.html">Privacy Policy</a></li>
-            </ul>
-        </div>
-        <div class="footer-icons">
-            <img src="./assets/icons/ph_instagram-logo-light.svg" alt="instagram icon">
-            <img src="./assets/icons/mdi_twitter.svg" alt="twitter icon">
-            <img src="./assets/icons/mdi_youtube.svg" alt="youtube icon">
+        <div class="footer-container">
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./login.html">Account</a></li>
+                    <li><a href="./returns-refunds.html">Returns & Refunds</a></li>
+                    <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-icons">
+                <img src="./assets/icons/ph_instagram-logo-light.svg" alt="instagram icon">
+                <img src="./assets/icons/mdi_twitter.svg" alt="twitter icon">
+                <img src="./assets/icons/mdi_youtube.svg" alt="youtube icon">
+            </div>
         </div>
     </footer>
 
